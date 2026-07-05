@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+        <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+ <h1 class="title">CMC TEAM</h1>
+ <p class="subtitle">Modern animated UI design</p>
+
+<input type="text" id="username" placeholder="Username"><br><br>
+<input type="password" id="password" placeholder="Password"><br><br>
+
+<button onclick="login()">Login</button>
+
+<p><a href="forgot.html">Forgot Password?</a></p>
+
+<p>No account?</p>
+<a href="register.html">Register</a>
+</div>
+<script>
+function login(){
+
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+
+    let savedPassword = localStorage.getItem(username);
+
+    if(savedPassword === password){
+        alert("Login Successful!");
+        window.location.href = "home.html";
+    }else{
+        alert("Invalid Username or Password");
+    }
+
+}
+</script>
+
+</body>
+</html>
+ 
+<script>
+function goToPage(page) {
+    document.body.classList.add("fade-out");
+
+    setTimeout(function() {
+        window.location.href = page;
+    }, 500);
+}
+</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Animated UI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+</div>
+
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+
+</body>
+</html>
+
+<script>
+function loginUser(){
+    let username = document.getElementById("username").value;
+
+    if(username.trim() === ""){
+        alert("Enter username");
+        return;
+    }
+
+    localStorage.setItem("username", username);
+
+    window.location.href = "home.html";
+}
+</script>
+
+
